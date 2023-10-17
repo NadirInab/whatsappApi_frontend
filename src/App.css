@@ -3,18 +3,35 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
   border-radius: 10px;
 }
+
 body {
   background-color: rgb(0, 66, 107);
+  background-image: url("./");
+  background-size: cover;
+  background-position: center center;
+  /* background-color: #f0f0f0; */
 }
+
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.container {
+  padding: 40px;
+/* From https://css.glass */
+background: rgba(72, 175, 171, 0.53);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.7px);
+-webkit-backdrop-filter: blur(11.7px);
+border: 1px solid rgba(72, 175, 171, 0.3);
 }
 
 form {
@@ -32,26 +49,33 @@ label {
   float: left;
 }
 
-textarea, input {
+textarea,
+input {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #6e8d7b;
   border-radius: 5px;
   width: 100%;
-  background-color: rgba(8, 68, 83, 0.808);
+  background-color: rgba(137, 181, 192, 0.171);
 }
-textarea{
+
+textarea {
   height: 100px;
 }
+
 button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007BFF;
+  /* background-color: #07119b; */
+  background-color: rgb(7, 93, 99) !important;
   color: #fff;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: rgba(2, 65, 70, 0.849);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  transform: scale(1.02); 
 }

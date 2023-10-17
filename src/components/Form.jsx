@@ -9,11 +9,6 @@ const MessageForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // let data = {
-    //     'recipient' : recipient, 
-    //     'message' : message
-    // } ;
-
     let data = {
       messaging_product: 'whatsapp',
       to: recipient,
@@ -33,7 +28,6 @@ const MessageForm = () => {
       console.error('Error sending message:', error);
     }
   };
-²
   return (
     <form onSubmit={handleSubmit}>
    
