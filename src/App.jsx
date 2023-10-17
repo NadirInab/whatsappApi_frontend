@@ -1,12 +1,15 @@
 import { useState } from 'react'
-import Form from './components/Form' ;
 import './App.css'
+import Form from './components/Form';
+import Hero from './components/Hero';
 
 function App() {
   return (
     <div className="App">
-      <h1>Send WhatsApp Message</h1>
-      <Form />
+      <div className="container">
+        <Hero />
+        <Form />
+      </div>
     </div>
   )
 }
