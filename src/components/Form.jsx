@@ -20,7 +20,7 @@ const MessageForm = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/sendMessage',data
+        'http://127.0.0.1:8000/api/sendMessage',data
       );
 
       console.log('Message sent:', response.data.message);
