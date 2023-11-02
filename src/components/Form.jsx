@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import MessageDisplay from './MessagesDisplay';
 
 const MessageForm = () => {
   const [message, setMessage] = useState('');
   const [recipient, setRecipient] = useState('');
+  const [sentMessages, setSentMessages] = useState([]);
   // const [whatsappData, setWhatsappData] = useState(null);
 
   // useEffect(() => {
@@ -29,14 +31,15 @@ const MessageForm = () => {
         body: message
       }
     };
+    setSentMessages((prevMessages) => [...prevMessages, message]);
 
-    console.log(data) ;
+    // console.log(data) ;
 
     try {
       const response = await axios.post(
         'http://127.0.0.1:8000/api/sendMessage', data
       );
-      console.log('Message sent:', response.data);
+      // console.log('Message sent:', response.data);
     } catch (error) {
       console.error('Error sending message:', error);
     }
@@ -60,6 +63,7 @@ const MessageForm = () => {
         />
       </div>
       <button type="submit">Send Message</button>
+      <MessageDisplay sentMessages={sentMessages} />
 
       {/* <div>
         {whatsappData && (
