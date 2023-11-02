@@ -4,20 +4,19 @@ import axios from 'axios';
 const MessageForm = () => {
   const [message, setMessage] = useState('');
   const [recipient, setRecipient] = useState('');
+  // const [whatsappData, setWhatsappData] = useState(null);
 
-  const [whatsappData, setWhatsappData] = useState(null);
-
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/webhooks') 
-        .then(response => {
-          console.log(response.data) ;
-          console.log("helo fze ===============================================") ;
-            setWhatsappData(response.data);
-        })
-        .catch(error => {
-            console.error('Error fetching WhatsApp data:', error);
-        });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('http://127.0.0.1:8000/api/webhooks') 
+  //       .then(response => {
+  //         console.log(response.data) ;
+  //         console.log("helo fze ===============================================") ;
+  //           setWhatsappData(response.data);
+  //       })
+  //       .catch(error => {
+  //           console.error('Error fetching WhatsApp data:', error);
+  //       });
+  // }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +34,7 @@ const MessageForm = () => {
 
     try {
       const response = await axios.post(
-        'http://127.0.0.1:8080/api/sendMessage', data
+        'http://127.0.0.1:8000/api/sendMessage', data
       );
       console.log('Message sent:', response.data);
     } catch (error) {
@@ -62,13 +61,13 @@ const MessageForm = () => {
       </div>
       <button type="submit">Send Message</button>
 
-      <div>
+      {/* <div>
         {whatsappData && (
           <div>
             <pre>{JSON.stringify(whatsappData, null, 2)}</pre>
           </div>
         )}
-      </div>
+      </div> */}
     </form>
   );
 };
